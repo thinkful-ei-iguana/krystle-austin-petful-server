@@ -19,14 +19,16 @@ catRouter
         res.send(200);
     })
 
-    catRouter.route('/all').get((req, res, next) => {});
+    catRouter.route('/all').get((req, res, next) => {
+        res.json({});
+    });
 
     function getAllCats(catsList) {
-        let currentNode = catsList.first;
+        let current = catsList.first;
         let catsArray = [];
-        while(currentNode !== null) {
-            catsArray.push(currentNode.value);
-            currentNode = currentNode.next;
+        while(current !== null) {
+            catsArray.push(current.value);
+            current = current.next;
         }
         return catsArray;
     }

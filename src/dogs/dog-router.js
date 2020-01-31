@@ -24,11 +24,11 @@ dogRouter.route('/all').get((req, res, next) => {
 });
 
 function getAllDogs(dogsList) {
-    let currentNode = dogsList.first;
+    let current = dogsList.first;
     let dogsArray = [];
-    while (currentNode !== null) {
-        dogsArray.push(currentNode.values);
-        currentNode = currentNode.next
+    while (current !== null) {
+        dogsArray.push(current.value);
+        current = current.next;
     }
     return dogsArray;
 }
