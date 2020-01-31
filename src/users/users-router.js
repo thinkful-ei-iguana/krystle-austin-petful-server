@@ -16,7 +16,7 @@ userRouter.route('/').get((req, res, next) => {
 function getAllUsers(usersList) {
     let current = usersList.first;
     let usersArray = [];
-    while (curent !== null) {
+    while (current !== null) {
         usersArray.push(current.value);
         current = current.next;
     }
