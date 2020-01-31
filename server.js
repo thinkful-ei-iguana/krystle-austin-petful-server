@@ -8,6 +8,9 @@ const app = express();
 app.use(cors({ origin: process.config.CLIENT_ORIGIN }));
 app.use(morgan(morganSettings));
 
+// app.use('/', (req, res, next) => {
+//   res.send('<h1> hello test route</h1>')
+// })
 app.use('/api/cats', catsRouter)
 
 
