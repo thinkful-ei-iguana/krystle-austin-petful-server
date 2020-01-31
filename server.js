@@ -2,21 +2,22 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const morganSettings = process.config.NODE_ENV === 'devlopment' ? 'tiny' : 'common';
-const { PORT } = require('./src/config');
+const { PORT, CLIENT_ORIGIN } = require('./src/config');
 const catRouter = require('./src/cats/cat-router')
 const dogRouter = require('./src/dogs/dog-router')
+const userRouter = require('./src/users/users-router')
 const app = express();
-app.use(cors({ origin: process.config.CLIENT_ORIGIN }));
+app.use(cors({origin: CLIENT_ORIGIN}));
 app.use(morgan(morganSettings));
 
-// app.use('/', (req, res, next) => {
-//   res.send('<h1> hello test route</h1>')
-// })
-app.use('/api/cats', catRouter)
-app.use('/api/dogs', dogRouter)
 
+app.use('/api/cat', catRouter)
+app.use('/api/dog', dogRouter)
+app.use('/api/users', userRouter)
 
-
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
 
 

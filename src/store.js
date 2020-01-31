@@ -134,7 +134,13 @@ const STORE = {
         story: 'Injured'
       }
     ],
-
+    users: [
+      { name: 'Bob' },
+      { name: 'Susan' },
+      { name: 'Joseph' },
+      { name: 'Thinkful' },
+      { name: 'David' }
+    ]
 };
 
 module.exports = STORE;
