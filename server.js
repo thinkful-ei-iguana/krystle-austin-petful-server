@@ -2,12 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const morganSettings = process.config.NODE_ENV === 'devlopment' ? 'tiny' : 'common';
-const { PORT, CLIENT_ORIGIN } = require('./src/config');
+const { PORT } = require('./src/config');
 const catRouter = require('./src/cats/cat-router')
 const dogRouter = require('./src/dogs/dog-router')
 const userRouter = require('./src/users/users-router')
 const app = express();
-app.use(cors({origin: CLIENT_ORIGIN}));
+app.use(cors());
 app.use(morgan(morganSettings));
 
 
