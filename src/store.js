@@ -62,7 +62,7 @@ const STORE = {
         name: 'Max',
         sex: 'Male',
         age: 3,
-        breed: 'Pitbull',
+        breed: 'Corgi',
         story: 'Caught'
       }
     ],
