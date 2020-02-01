@@ -15,8 +15,8 @@ userRouter
         res.json(users)
 })
     .delete((req, res, next) => {
-        let user = usersQueue.dequeue();
-        usersQueue.enqueue(user);
+        let user = userQueue.dequeue();
+        userQueue.enqueue(user);
         res.send(200);
 })
 
