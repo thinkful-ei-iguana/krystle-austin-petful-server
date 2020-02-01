@@ -11,8 +11,8 @@ STORE.users.forEach(user => userQueue.enqueue(user));
 userRouter
     .route('/')
     .get((req, res, next) => {
-        let users = getAllUsers(userQueue);
-        res.json(users)
+        let user = getAllUsers(userQueue);
+        res.json(user)
 })
     .delete((req, res, next) => {
         let user = userQueue.dequeue();
